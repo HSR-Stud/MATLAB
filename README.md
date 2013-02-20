@@ -14,7 +14,7 @@ Lösungen zu den Aufgaben aus dem Praktikum:
 ## DigPro2
 Lösungen zu den Aufgaben aus dem Praktikum:
 
-### Morphologic Operations
+### [Morphologic Operations](https://github.com/HSR-Stud/MATLAB/tree/master/DigPro2/MorphologicOperations)
 * [ErosionDilation.m](https://github.com/HSR-Stud/MATLAB/blob/master/DigPro2/MorphologicOperations/ErosionDilation.m):
   Beispiel zu Erosion und Dilation
 
