@@ -17,4 +17,6 @@ Lösungen zu den Aufgaben aus dem Praktikum:
 ### [Morphologic Operations](https://github.com/HSR-Stud/MATLAB/tree/master/DigPro2/MorphologicOperations)
 * [ErosionDilation.m](https://github.com/HSR-Stud/MATLAB/blob/master/DigPro2/MorphologicOperations/ErosionDilation.m):
   Beispiel zu Erosion und Dilation
+* [HitAndMiss.m](https://github.com/HSR-Stud/MATLAB/blob/master/DigPro2/MorphologicOperations/HitAndMiss.m)
+  Beispiel zu Hit-And-Miss: Eckpunkte im Bild finden
 
