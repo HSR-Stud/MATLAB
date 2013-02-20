@@ -10,3 +10,9 @@ Lösungen zu den Aufgaben aus dem Praktikum:
 * [PhaseCorrelation.m](https://github.com/HSR-Stud/MATLAB/blob/master/DigPro1/PhaseCorrelation.m):
   Beispiel zur Phasenkorrelation. Mit Fouriertransformation vorwärts/rückwärts und zusammensetzen von Bilder.
 
+
+## DigPro2
+Lösungen zu den Aufgaben aus dem Praktikum:
+* [ErosionDilation.m](https://github.com/HSR-Stud/MATLAB/blob/master/DigPro2/MorphologicOperations/ErosionDilation.m):
+  Beispiel zu Erosion und Dilation
+
