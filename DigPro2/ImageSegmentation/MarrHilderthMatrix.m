@@ -50,10 +50,11 @@ Itemp = conv2(conv2(I,Gx), Gy);
 I3 = ZeroCrossing((conv2(Itemp, nabX,'same') + conv2(Itemp, nabY,'same')));
 toc
 
+br = floor(size(Gx,1)/2);
 subplot(2,2,4);
+Itemp = Itemp(br+1:end-br, br+1:end-br);
 imshow(Itemp, []);
 
 subplot(2,2,3);
-br = floor(size(Gx,1)/2);
 I3 = I3(br+1:end-br, br+1:end-br);
 imshow(I3);
