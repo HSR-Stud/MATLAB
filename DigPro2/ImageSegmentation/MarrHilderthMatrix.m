@@ -1,11 +1,17 @@
 % Marr Hilderth Algorithm
 
 %% Settings:
-sigma = 4;
+sigma = 8;
 laplacian = [1 1 1; 1 -8 1; 1 1 1];
 
+laplacian = [
+     0    -1     0;
+    -1     4    -1;
+     0    -1     0;
+     ];
+
 %% Bild laden
-I = double(imread('cameraman.tif'));
+I = double(imread('coins.png'));
 [Ix, Iy] = size(I);
 maskSize = floor(ceil((6 * sigma))/2)*2 + 1;
 subplot(2,2,1);
@@ -23,11 +29,11 @@ for a = 1:maskSize
     end
 end
 Gy = Gx';
-mask = conv2(mask,laplacian, 'same');
 
-%% Bild mit gesamtem LoG Filter falten und Zero-Crossing berechnen
 tic
-I2 = ZeroCrossing(conv2(I, mask, 'same'));
+I2 = conv2(conv2(I,mask), laplacian, 'same');
+%% Bild mit gesamtem LoG Filter falten und Zero-Crossing berechnen
+I2 = ZeroCrossing(I2);
 toc
 
 subplot(2,2,2);
@@ -38,8 +44,8 @@ nabX = [1 -2 1];
 nabY = nabX';
 
 tic
-Itemp = conv2(conv2(I,Gx, 'same'), Gy, 'same');
-I3 = ZeroCrossing(conv2(Itemp, nabX, 'same') + conv2(Itemp, nabY, 'same'));
+Itemp = conv2(conv2(I,Gx), Gy);
+I3 = ZeroCrossing((conv2(Itemp, nabX,'same') + conv2(Itemp, nabY,'same')));
 toc
 
 subplot(2,2,4);
