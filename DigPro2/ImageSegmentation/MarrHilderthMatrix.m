@@ -30,10 +30,12 @@ for a = 1:maskSize
 end
 Gy = Gx';
 
+mask = conv2(mask, laplacian);
 tic
-I2 = conv2(conv2(I,mask), laplacian, 'same');
 %% Bild mit gesamtem LoG Filter falten und Zero-Crossing berechnen
-I2 = ZeroCrossing(I2);
+I2 = ZeroCrossing(conv2(I, mask));
+br = floor(size(mask,1)/2);
+I2 = I2(br+1:end-br, br+1:end-br);
 toc
 
 subplot(2,2,2);
@@ -52,4 +54,6 @@ subplot(2,2,4);
 imshow(Itemp, []);
 
 subplot(2,2,3);
+br = floor(size(Gx,1)/2);
+I3 = I3(br+1:end-br, br+1:end-br);
 imshow(I3);
